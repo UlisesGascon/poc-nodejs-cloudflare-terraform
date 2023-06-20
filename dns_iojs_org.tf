@@ -144,3 +144,11 @@ resource "cloudflare_record" "terraform_managed_resource_8966613ab75b29a56f3c787
   zone_id = "8c96c2859d246364a9b78b2fee7bee49"
 }
 
+resource "cloudflare_record" "demo" {
+  name    = "demo"
+  proxied = false
+  ttl     = 1
+  type    = "A"
+  value   = "138.197.224.240"
+  zone_id = "8c96c2859d246364a9b78b2fee7bee49"
+}
