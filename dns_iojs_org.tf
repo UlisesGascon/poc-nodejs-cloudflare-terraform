@@ -7,15 +7,6 @@ resource "cloudflare_record" "terraform_managed_resource_1913231cd4f209515037c1f
   zone_id = "8c96c2859d246364a9b78b2fee7bee49"
 }
 
-resource "cloudflare_record" "terraform_managed_resource_0f6b6757054fdba56c054cca6aecc9be" {
-  name    = "iojs.org"
-  proxied = false
-  ttl     = 1
-  type    = "A"
-  value   = "138.197.224.240"
-  zone_id = "8c96c2859d246364a9b78b2fee7bee49"
-}
-
 resource "cloudflare_record" "terraform_managed_resource_3e025abdebca0ae6576a71a2c26d2c1b" {
   name    = "www"
   proxied = false
