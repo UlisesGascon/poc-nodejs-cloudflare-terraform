@@ -1,6 +1,6 @@
-# Cloudflare Infrastructure
+# POC Node.js Cloudflare Terraform
 
-Repository to manage Node.js Cloudflare settings using Terraform
+Proof of concept repository to manage Node.js Cloudflare settings using Terraform
 
 ### Contributing
 
