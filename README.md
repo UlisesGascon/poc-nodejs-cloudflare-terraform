@@ -1,6 +1,11 @@
-# Cloudflare Infrastructure
+# ⚠️ This repository is not longer maintained ⚠️
 
-Repository to manage Node.js Cloudflare settings using Terraform
+The project has been migrated to [nodejs/build](https://github.com/nodejs/build/tree/main/terraform). More details in [PR #3391](https://github.com/nodejs/build/pull/3391)
+
+
+# POC Node.js Cloudflare Terraform
+
+Proof of concept repository to manage Node.js Cloudflare settings using Terraform.
 
 ### Contributing
 
