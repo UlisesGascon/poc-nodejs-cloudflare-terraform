@@ -40,31 +40,31 @@ jobs:
       run: terraform init
       working-directory: ${{ env.working-directory }}
       env:
-        TF_VAR_IOJS_ZONE_ID: ${{ secrets.IOJS_ZONE_ID }}
-        TF_VAR_NODEJS_ZONE_NAME: ${{ secrets.NODEJS_ZONE_NAME }}
+        TF_VAR_iojs_zone_id: ${{ secrets.IOJS_ZONE_ID }}
+        TF_VAR_nodejs_zone_id: ${{ secrets.NODEJS_ZONE_ID }}
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
       run: terraform fmt -check
       working-directory: ${{ env.working-directory }}
       env:
-        TF_VAR_IOJS_ZONE_ID: ${{ secrets.IOJS_ZONE_ID }}
-        TF_VAR_NODEJS_ZONE_NAME: ${{ secrets.NODEJS_ZONE_NAME }}
+        TF_VAR_iojs_zone_id: ${{ secrets.IOJS_ZONE_ID }}
+        TF_VAR_nodejs_zone_id: ${{ secrets.NODEJS_ZONE_ID }}
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: terraform plan -input=false
       working-directory: ${{ env.working-directory }}
       env:
-        TF_VAR_IOJS_ZONE_ID: ${{ secrets.IOJS_ZONE_ID }}
-        TF_VAR_NODEJS_ZONE_NAME: ${{ secrets.NODEJS_ZONE_NAME }}
+        TF_VAR_iojs_zone_id: ${{ secrets.IOJS_ZONE_ID }}
+        TF_VAR_nodejs_zone_id: ${{ secrets.NODEJS_ZONE_ID }}
 
       # On push to "main", build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
-      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      if: github.ref == 'refs/heads/main' && github.event_ID == 'push'
       run: terraform apply -auto-approve -input=false
       working-directory: ${{ env.working-directory }}
       env:
-        TF_VAR_IOJS_ZONE_ID: ${{ secrets.IOJS_ZONE_ID }}
-        TF_VAR_NODEJS_ZONE_NAME: ${{ secrets.NODEJS_ZONE_NAME }}
+        TF_VAR_iojs_zone_id: ${{ secrets.IOJS_ZONE_ID }}
+        TF_VAR_nodejs_zone_id: ${{ secrets.NODEJS_ZONE_ID }}
